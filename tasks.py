@@ -44,18 +44,32 @@
 #  Найдите произведение элементов на указанных позициях.
 # Позиции хранятся в файле file.txt в одной строке одно число.
 
-from random import randint
+# from random import randint
 
-n = int(input("Insert N: "))
-array = [None] * n
+# n = int(input("Insert N: "))
+# array = [None] * n
+# for i in range(n):
+#     array[i] = randint(-n, n)
+# print(array)
+# multiply = 1
+# f = open('file.txt', 'r')
+# # Вроде бы по семинару все так, но у меня не находит в этой строке файл
+# for i in f:
+#     multiply *= array[i]
+# print(multiply)
+# # А так, вроде по алгоритму должно быть все хорошо
+
+
+# Task 18
+# Реализуйте алгоритм перемешивания списка.
+
+import random
+
+n = 10
+rndList = []
 for i in range(n):
-    array[i] = randint(-n, n+1)
-print(array)
-multiply = 1
-f = open('file.txt', 'r')
-# Вроде бы по семинару все так, но у меня не хочет в этой строке открывать файл
-for i in f.read():
-    multiply *= array[i]
-print(multiply)
-
-# А так, вроде по алгоритму должно быть все хорошо
+    rndList.append(random.randint(-10, 10))
+rndList.sort()
+print(rndList)
+random.shuffle(rndList)
+print(rndList)
