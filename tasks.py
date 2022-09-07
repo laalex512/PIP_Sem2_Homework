@@ -17,9 +17,24 @@
 # Пример:
 # - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-num = int(input("Insert N: "))
-resultList = [None]*num
-resultList[0] = 1
-for i in range(1, num):
-    resultList[i] = resultList[i-1]*(i+1)
-print(resultList)
+# num = int(input("Insert N: "))
+# resultList = [None]*num
+# resultList[0] = 1
+# for i in range(1, num):
+#     resultList[i] = resultList[i-1]*(i+1)
+# print(resultList)
+
+
+# Task 16
+# Задайте список из n чисел последовательности $(1+\frac 1 n)^n$
+# и выведите на экран их сумму.
+
+def ourFunc(x):
+    return (1+1/x)**x
+
+
+num = int(input("Insert n: "))
+sum = 0
+for i in range(1, num+1):
+    sum += ourFunc(i)
+print(sum)
