@@ -29,12 +29,33 @@
 # Задайте список из n чисел последовательности $(1+\frac 1 n)^n$
 # и выведите на экран их сумму.
 
-def ourFunc(x):
-    return (1+1/x)**x
+# def ourFunc(x):
+#     return (1+1/x)**x
+
+# num = int(input("Insert n: "))
+# sum = 0
+# for i in range(1, num+1):
+#     sum += ourFunc(i)
+# print(sum)
 
 
-num = int(input("Insert n: "))
-sum = 0
-for i in range(1, num+1):
-    sum += ourFunc(i)
-print(sum)
+# Task 17
+# Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+#  Найдите произведение элементов на указанных позициях.
+# Позиции хранятся в файле file.txt в одной строке одно число.
+
+from random import randint
+
+n = int(input("Insert N: "))
+array = [None] * n
+for i in range(n):
+    array[i] = randint(-n, n+1)
+print(array)
+multiply = 1
+f = open('file.txt', 'r')
+# Вроде бы по семинару все так, но у меня не хочет в этой строке открывать файл
+for i in f.read():
+    multiply *= array[i]
+print(multiply)
+
+# А так, вроде по алгоритму должно быть все хорошо
